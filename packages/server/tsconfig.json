@@ -5,7 +5,10 @@
     "moduleResolution": "Node10",
     "outDir": "dist",
     "rootDir": "src",
-    "types": ["node"]
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"]
 }

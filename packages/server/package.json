@@ -11,11 +11,15 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
+    "@colyseus/schema": "^4.0.30",
     "@colyseus/ws-transport": "^0.17.13",
     "colyseus": "^0.17.10",
+    "express": "^5.2.1",
     "shared": "workspace:*"
   },
   "devDependencies": {
+    "@colyseus/sdk": "^0.17.43",
+    "@colyseus/testing": "^0.17.11",
     "@types/express": "^5.0.6",
     "@types/node": "^26.2.0",
     "nodemon": "^3.1.14",
