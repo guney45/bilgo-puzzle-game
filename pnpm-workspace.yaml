@@ -1,0 +1,16 @@
+packages:
+  - "packages/*"
+
+allowBuilds:
+  esbuild: true
+  msgpackr-extract: true
+
+# uWebSockets.js (Colyseus'un opsiyonel uWebSockets transport'unun
+# transitive bağımlılığı) GitHub'dan tarball olarak dağıtılıyor; bu
+# yüzden pnpm 11'in varsayılan "exotic subdep" korumasını bu paket için
+# kapatıyoruz. Biz zaten @colyseus/ws-transport kullanıyoruz, bu paket
+# hiç çalıştırılmıyor — sadece colyseus'un dependency tree'sinde var.
+blockExoticSubdeps: false
+
+minimumReleaseAgeExclude:
+  - eslint@10.8.1
