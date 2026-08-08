@@ -2,7 +2,9 @@
 
 Bu repo, tarayıcı tabanlı rekabetçi multiplayer puzzle oyunudur.
 Mimari bir işe başlamadan önce **oku**: `docs/01-PROJECT_BRIEF.md`,
-`docs/03-ARCHITECTURE.md`, `docs/04-NETWORK_PROTOCOL.md`.
+`docs/03-ARCHITECTURE.md`, `docs/04-NETWORK_PROTOCOL.md`, **`docs/DECISIONS.md`**
+(önceki fazlarda çıkan gerçek hatalar ve alınan kararlar — tekrar aynı hataya
+düşmemek için önce bu okunur).
 Oyun kuralı/sayı gerektiğinde: `docs/02-GAME_DESIGN.md`. Sırayla ilerle: `docs/05-ROADMAP.md`.
 
 ## Çalışma biçimi
@@ -31,6 +33,8 @@ Oyun kuralı/sayı gerektiğinde: `docs/02-GAME_DESIGN.md`. Sırayla ilerle: `do
 ## Teknoloji notları
 
 - Colyseus **0.17** kullanılıyor (`defineServer()`, `defineRoom()`, `onDrop()`, `onReconnect()`). API'yi hafızandan yazma — `docs.colyseus.io` ile doğrula.
+- Client SDK paketi `colyseus.js` **değil**, `@colyseus/sdk`'dır (bkz. ADR-004). `colyseus.js@0.16.x` sunucunun 0.17 matchmake yanıt şekliyle uyumsuz.
+- Server dev script'i `tsx watch` değil `nodemon --watch src` kullanır (bkz. ADR-007) — `tsx watch`, `node_modules`'ı da izleyip sonsuz restart döngüsüne giriyor.
 - Client: React + TypeScript + Vite + Tailwind v4 + Zustand. Oyun motoru yok; görsel puzzle'lar kendi içlerinde SVG/canvas kullanabilir.
 - Test: Vitest + `@colyseus/testing`.
 - Paket yöneticisi: pnpm (workspace).
