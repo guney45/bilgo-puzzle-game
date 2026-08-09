@@ -1,4 +1,5 @@
 import { Schema, type, MapSchema } from '@colyseus/schema';
+import { NO_FASTEST_ANSWER_MS } from 'shared';
 
 export class PlayerSchema extends Schema {
   @type('string') id = '';
@@ -10,6 +11,10 @@ export class PlayerSchema extends Schema {
   @type('number') streak = 0;
   @type('boolean') hasAnswered = false;
   @type('number') joinIndex = 0;
+  // Beraberlik bozma karşılaştırıcısı için (bkz. docs/02-GAME_DESIGN.md §5.3,
+  // shared/src/scoring.ts compareStandings). Yalnızca DOĞRU cevaplar sayılır.
+  @type('number') totalAnswerMs = 0;
+  @type('number') fastestAnswerMs = NO_FASTEST_ANSWER_MS;
 }
 
 export class GameState extends Schema {

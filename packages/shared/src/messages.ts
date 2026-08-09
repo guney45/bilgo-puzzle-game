@@ -1,6 +1,8 @@
 // Client ve server arasındaki tek sözleşme. Kaynak: docs/04-NETWORK_PROTOCOL.md
 // Protokol değişirse önce orada, sonra burada güncellenir.
 
+import type { ClientPuzzle } from './puzzle';
+
 export type ClientMessage =
   | { type: 'player:setNickname'; nickname: string }
   | { type: 'player:ready'; ready: boolean }
@@ -49,8 +51,7 @@ export interface ErrorMessage {
 }
 
 export interface RoundPuzzleMessage {
-  // ClientPuzzle şekli Faz 4'te shared/src/puzzle.ts içinde tanımlanacak.
-  puzzle: unknown;
+  puzzle: ClientPuzzle;
   round: number;
   totalRounds: number;
   revealAt: number;

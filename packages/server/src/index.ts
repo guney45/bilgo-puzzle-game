@@ -1,9 +1,10 @@
 import express from 'express';
 import { defineServer, defineRoom } from 'colyseus';
+import { DEFAULT_SERVER_PORT } from 'shared';
 import { GameRoom } from './rooms/GameRoom';
 import { joinByCodeHandler } from './http/joinByCode';
 
-const PORT = Number(process.env.PORT) || 2567;
+const PORT = Number(process.env.PORT) || DEFAULT_SERVER_PORT;
 
 const server = defineServer({
   rooms: {

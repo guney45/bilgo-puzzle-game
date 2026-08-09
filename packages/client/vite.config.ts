@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: true,
+    // Cloudflare quick tunnel (*.trycloudflare.com) üzerinden telefonda test
+    // ederken Vite'ın host kontrolü isteği reddetmesin diye. Yerel ağda WebSocket
+    // upgrade'i aradaki cihaz tarafından düşürüldüğü için tünel kullanılıyor.
+    allowedHosts: ['.trycloudflare.com'],
   },
   // `shared`, workspace paketi olduğu için Vite onu kaynaktan (/@fs/) sunuyor ve
   // ön-paketlemiyor. shared'ın CJS derlemesi `export * from` ifadelerini çalışma

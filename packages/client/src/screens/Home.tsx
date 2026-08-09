@@ -3,6 +3,8 @@ import type { Room } from '@colyseus/sdk';
 import { NICKNAME_MAX, sanitizeNickname, normalizeRoomCode } from 'shared';
 import { createRoom, joinRoomByCode, AppError } from '../net/colyseus';
 import { tr, errorMessage } from '../i18n/tr';
+import { Button } from '../components/Button';
+import { Card } from '../components/Card';
 
 interface HomeProps {
   onRoomReady: (room: Room) => void;
@@ -48,8 +50,8 @@ export default function Home({ onRoomReady }: HomeProps) {
   }
 
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-slate-950 p-4 text-slate-100">
-      <div className="w-full max-w-sm rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-xl">
+    <div className="app-shell flex items-center justify-center bg-slate-950 text-slate-100">
+      <Card>
         <h1 className="mb-6 text-center text-2xl font-semibold">{tr.home.title}</h1>
 
         <label className="mb-1 block text-sm text-slate-400" htmlFor="nickname">
@@ -66,15 +68,9 @@ export default function Home({ onRoomReady }: HomeProps) {
           style={{ touchAction: 'manipulation' }}
         />
 
-        <button
-          type="button"
-          onClick={handleCreate}
-          disabled={!canSubmit}
-          className="mb-4 min-h-12 w-full rounded-lg bg-emerald-500 px-4 py-3 font-semibold text-slate-950 disabled:opacity-40"
-          style={{ touchAction: 'manipulation' }}
-        >
+        <Button onClick={handleCreate} disabled={!canSubmit} className="mb-4">
           {busy === 'create' ? '…' : tr.home.createButton}
-        </button>
+        </Button>
 
         <div className="mb-4 flex items-center gap-3 text-slate-600">
           <div className="h-px flex-1 bg-slate-800" />
@@ -96,18 +92,12 @@ export default function Home({ onRoomReady }: HomeProps) {
           style={{ touchAction: 'manipulation' }}
         />
 
-        <button
-          type="button"
-          onClick={handleJoin}
-          disabled={!canSubmit || roomCode.length < 5}
-          className="min-h-12 w-full rounded-lg bg-slate-700 px-4 py-3 font-semibold text-slate-100 disabled:opacity-40"
-          style={{ touchAction: 'manipulation' }}
-        >
+        <Button variant="secondary" onClick={handleJoin} disabled={!canSubmit || roomCode.length < 5}>
           {busy === 'join' ? '…' : tr.home.joinButton}
-        </button>
+        </Button>
 
         {error && <p className="mt-4 text-center text-sm text-red-400">{error}</p>}
-      </div>
+      </Card>
     </div>
   );
 }

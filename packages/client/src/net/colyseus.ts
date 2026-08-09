@@ -1,7 +1,12 @@
 import { Client, Room, ServerError, MatchMakeError, type SeatReservation } from '@colyseus/sdk';
-import type { ErrorCode, RoomWelcomeMessage } from 'shared';
+import { DEFAULT_SERVER_PORT, type ErrorCode, type RoomWelcomeMessage } from 'shared';
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL ?? 'http://localhost:2567';
+// VITE_SERVER_URL genelde tanımlı değil: sayfa hangi host'tan yüklendiyse (ör.
+// telefon QR ile 192.168.x.x:5173'ü açtığında) sunucuya da aynı host'ta, sabit
+// portta bağlanılır. Bu sayede geliştirme makinesinin LAN IP'si değiştiğinde
+// (ağ değişimi) .env'i elle güncellemeye gerek kalmaz.
+const SERVER_URL =
+  import.meta.env.VITE_SERVER_URL ?? `${window.location.protocol}//${window.location.hostname}:${DEFAULT_SERVER_PORT}`;
 
 export const client = new Client(SERVER_URL);
 

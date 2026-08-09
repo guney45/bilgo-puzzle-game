@@ -1,17 +1,25 @@
 import { useCallback, useRef, useSyncExternalStore } from 'react';
 import { getStateCallbacks, type Room } from '@colyseus/sdk';
+import type { GamePhase } from 'shared';
 
 export interface PlayerView {
   id: string;
   nickname: string;
   connected: boolean;
+  ready: boolean;
   joinIndex: number;
+  score: number;
 }
 
 export interface RoomStateView {
   roomCode: string;
   hostId: string;
   players: PlayerView[];
+  phase: GamePhase;
+  round: number;
+  totalRounds: number;
+  /** null = süresiz faz (LOBBY, GAME_RESULT) */
+  phaseEndsAt: number | null;
 }
 
 // consumeSeatReservation()/create() promise'i onJoin'de çözülüyor, ama ilk state
@@ -25,6 +33,10 @@ function computeSnapshot(room: Room): RoomStateView | null {
         roomCode?: string;
         hostId?: string;
         players?: Map<string, PlayerView>;
+        phase?: GamePhase;
+        round?: number;
+        totalRounds?: number;
+        phaseEndsAt?: number;
       }
     | undefined;
 
@@ -37,8 +49,16 @@ function computeSnapshot(room: Room): RoomStateView | null {
       id: p.id,
       nickname: p.nickname,
       connected: p.connected,
+      ready: p.ready,
       joinIndex: p.joinIndex,
+      score: p.score,
     })),
+    phase: state.phase ?? 'LOBBY',
+    round: state.round ?? 0,
+    totalRounds: state.totalRounds ?? 0,
+    // Sunucu "süresiz" fazı 0 ile temsil eder (bkz. GameRoom.handlePhaseChange) —
+    // client tarafında bunu null'a çevirip Timer/Countdown'ın anlayacağı hale getiriyoruz.
+    phaseEndsAt: state.phaseEndsAt ? state.phaseEndsAt : null,
   };
 }
 
@@ -75,6 +95,10 @@ export function useRoomState(room: Room | null): RoomStateView | null {
       const unsubs: Array<() => void> = [];
       unsubs.push($(room.state).listen('roomCode', notify));
       unsubs.push($(room.state).listen('hostId', notify));
+      unsubs.push($(room.state).listen('phase', notify));
+      unsubs.push($(room.state).listen('round', notify));
+      unsubs.push($(room.state).listen('totalRounds', notify));
+      unsubs.push($(room.state).listen('phaseEndsAt', notify));
       const players = $(room.state).players!;
       unsubs.push(
         players.onAdd((player: unknown) => {
