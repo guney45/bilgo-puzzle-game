@@ -12,7 +12,7 @@ import {
 } from 'shared';
 import { MatchController, type MatchPhaseInfo } from './MatchController';
 
-const PLAYING_MS = PUZZLE_TIME_MS.PATTERN; // FAZ 4'te tek puzzle tipi (PATTERN) kayıtlı, süre sabit
+const PLAYING_MS = PUZZLE_TIME_MS.PATTERN; // Bu sabiti kullanan testler MATCH_SEED=42 ile o turda fiilen PATTERN'in seçildiğini varsayar
 const MATCH_SEED = 42;
 
 function makeController(totalRounds = 2) {
@@ -353,7 +353,11 @@ describe('MatchController — zorluk eğrisi (bkz. docs/02-GAME_DESIGN.md §2)',
       expect(controller.phase).toBe('PLAYING');
 
       const expectedDifficulty = difficultyForRound(round, ROUNDS_PER_MATCH);
-      const expectedLimitMs = Math.round(PUZZLE_TIME_MS.PATTERN * timeMultiplierForDifficulty(expectedDifficulty));
+      // Birden fazla puzzle tipi kayıtlı olduğundan (bkz. puzzles/registry.ts)
+      // turun temel süresi tipe göre değişir; o turda gerçekten seçilen tipi
+      // controller'dan okuyup PUZZLE_TIME_MS'ten buna göre bakıyoruz.
+      const actualType = controller.getClientPuzzle('p1')!.type;
+      const expectedLimitMs = Math.round(PUZZLE_TIME_MS[actualType] * timeMultiplierForDifficulty(expectedDifficulty));
       expect(controller.phaseEndsAt! - revealAt).toBe(expectedLimitMs);
 
       // PLAYING → LOCKED → ROUND_RESULT (bir sonraki REVEAL'a hazırlan)

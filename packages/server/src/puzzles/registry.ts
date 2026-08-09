@@ -3,9 +3,11 @@
 import type { PuzzleType, Rng } from 'shared';
 import type { PuzzleGenerator } from './PuzzleGenerator';
 import { patternGenerator } from './pattern';
+import { logicGenerator } from './logic';
 
 const REGISTRY: Partial<Record<PuzzleType, PuzzleGenerator>> = {
   PATTERN: patternGenerator,
+  LOGIC: logicGenerator,
 };
 
 export function getPuzzleGenerator(type: PuzzleType): PuzzleGenerator {
@@ -19,9 +21,9 @@ export function registeredPuzzleTypes(): PuzzleType[] {
 }
 
 // Bir sonraki turun puzzle tipini seçer: aynı tip arka arkaya gelmez (bkz.
-// docs/02-GAME_DESIGN.md §2). Tek tip kayıtlıysa (bugün yalnızca PATTERN) bu
-// kural anlamsızca ihlal edilmez — o tek tip döner. Yeni bir tip eklendiğinde
-// (FAZ 10) burası değişmeden doğru çalışmaya devam eder.
+// docs/02-GAME_DESIGN.md §2). Tek tip kayıtlıyken bu kural anlamsızca ihlal
+// edilmez — o tek tip döner. Yeni bir tip eklendiğinde (bkz. FAZ 10)
+// burası değişmeden doğru çalışmaya devam eder.
 export function pickPuzzleType(rng: Rng, available: readonly PuzzleType[], previous: PuzzleType | null): PuzzleType {
   if (available.length === 0) throw new Error('Kayıtlı puzzle tipi yok');
   const candidates = previous !== null && available.length > 1 ? available.filter((t) => t !== previous) : available;

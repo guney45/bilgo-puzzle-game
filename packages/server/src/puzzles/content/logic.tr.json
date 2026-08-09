@@ -1,0 +1,392 @@
+[
+  {
+    "id": "logic-d1-01",
+    "difficulty": 1,
+    "prompt": "Ali, Mehmet'ten uzundur. Mehmet, Can'dan uzundur. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Can en kısadır" },
+      { "id": "b", "label": "Ali ve Can eşit boydadır" },
+      { "id": "c", "label": "Mehmet en uzundur" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Ali > Mehmet > Can olduğundan Can üçü arasında en kısadır."
+  },
+  {
+    "id": "logic-d1-02",
+    "difficulty": 1,
+    "prompt": "Zeynep, Elif'ten büyüktür. Elif, Burak'tan büyüktür. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Zeynep en büyüktür" },
+      { "id": "b", "label": "Burak, Elif'ten büyüktür" },
+      { "id": "c", "label": "Elif en büyüktür" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Zeynep > Elif > Burak olduğundan Zeynep üçü arasında en büyüktür."
+  },
+  {
+    "id": "logic-d1-03",
+    "difficulty": 1,
+    "prompt": "Yarışta Deniz, Kerem'den önce bitirdi. Kerem, Aslı'dan önce bitirdi. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Deniz, Aslı'dan önce bitirdi" },
+      { "id": "b", "label": "Aslı, Deniz'den önce bitirdi" },
+      { "id": "c", "label": "Kerem yarışı kazandı" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Bitiş sırası Deniz, Kerem, Aslı şeklindedir; dolayısıyla Deniz, Aslı'dan önce bitirmiştir."
+  },
+  {
+    "id": "logic-d1-04",
+    "difficulty": 1,
+    "prompt": "Elma, armuttan pahalıdır. Armut, muzdan pahalıdır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Muz en ucuzdur" },
+      { "id": "b", "label": "Elma en ucuzdur" },
+      { "id": "c", "label": "Armut en pahalıdır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Elma > armut > muz sıralamasında muz en ucuz olandır."
+  },
+  {
+    "id": "logic-d1-05",
+    "difficulty": 1,
+    "prompt": "Sırada Emre, Can'ın önündedir. Can, Buse'nin önündedir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Emre, Buse'nin önündedir" },
+      { "id": "b", "label": "Buse, Emre'nin önündedir" },
+      { "id": "c", "label": "Can sırada ilk kişidir" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Sıra Emre, Can, Buse şeklindedir; Emre, Buse'nin önündedir."
+  },
+  {
+    "id": "logic-d1-06",
+    "difficulty": 1,
+    "prompt": "Kutu A, Kutu B'den ağırdır. Kutu B, Kutu C'den ağırdır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Kutu A en ağırdır" },
+      { "id": "b", "label": "Kutu C en ağırdır" },
+      { "id": "c", "label": "Kutu B ile Kutu A eşit ağırlıktadır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "A > B > C olduğundan Kutu A üçü arasında en ağır olandır."
+  },
+  {
+    "id": "logic-d1-07",
+    "difficulty": 1,
+    "prompt": "Bütün kediler memelidir. Pamuk bir kedidir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Pamuk bir memelidir" },
+      { "id": "b", "label": "Pamuk bir kuştur" },
+      { "id": "c", "label": "Bütün memeliler kedidir" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Bütün kediler memeli olduğuna göre bir kedi olan Pamuk da memelidir."
+  },
+  {
+    "id": "logic-d1-08",
+    "difficulty": 1,
+    "prompt": "Hava yağmurluysa maç ertelenir. Bugün hava yağmurludur. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Bugünkü maç ertelenir" },
+      { "id": "b", "label": "Bugünkü maç ertelenmez" },
+      { "id": "c", "label": "Yarın hava yağmurlu olacaktır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Koşul (yağmur) gerçekleştiğine göre sonucu (erteleme) da gerçekleşir."
+  },
+  {
+    "id": "logic-d1-09",
+    "difficulty": 1,
+    "prompt": "Masada Kutu 1, Kutu 2'nin solundadır. Kutu 2, Kutu 3'ün solundadır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Kutu 3, Kutu 1'in sağındadır" },
+      { "id": "b", "label": "Kutu 1, Kutu 3'ün sağındadır" },
+      { "id": "c", "label": "Kutu 2 en soldadır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Soldan sağa sıra Kutu 1, Kutu 2, Kutu 3 şeklindedir; Kutu 3, Kutu 1'in sağındadır."
+  },
+  {
+    "id": "logic-d1-10",
+    "difficulty": 1,
+    "prompt": "Kardeşler arasında Sude, Yaren'den küçüktür. Yaren, Toprak'tan küçüktür. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Sude en küçüktür" },
+      { "id": "b", "label": "Toprak en küçüktür" },
+      { "id": "c", "label": "Yaren en büyüktür" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Toprak > Yaren > Sude olduğundan Sude üçü arasında en küçük olandır."
+  },
+  {
+    "id": "logic-d2-01",
+    "difficulty": 2,
+    "prompt": "Dört arkadaş boylarını karşılaştırıyor: Ege, Berk'ten uzundur. Berk, Cem'den uzundur. Cem, Deniz'den uzundur. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Deniz en kısadır" },
+      { "id": "b", "label": "Berk en uzundur" },
+      { "id": "c", "label": "Cem, Ege'den uzundur" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Ege > Berk > Cem > Deniz sıralamasında Deniz dördü arasında en kısa olandır."
+  },
+  {
+    "id": "logic-d2-02",
+    "difficulty": 2,
+    "prompt": "Bir sayı 4'e tam bölünüyorsa çifttir. X sayısı çift değildir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "X sayısı 4'e tam bölünmez" },
+      { "id": "b", "label": "X sayısı 4'e tam bölünür" },
+      { "id": "c", "label": "X sayısı çifttir" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "4'e bölünen her sayı çifttir; X çift olmadığına göre 4'e de bölünemez (çelişik-önerme çıkarımı)."
+  },
+  {
+    "id": "logic-d2-03",
+    "difficulty": 2,
+    "prompt": "Toplantıya ya Aylin ya da Barış katılacak (yalnızca biri). Aylin toplantıya katılmayacağını söyledi. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Barış toplantıya katılacak" },
+      { "id": "b", "label": "Aylin toplantıya katılacak" },
+      { "id": "c", "label": "Toplantıya kimse katılmayacak" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "İkisinden yalnızca biri katılacağına ve Aylin katılmayacağına göre katılacak kişi Barış'tır."
+  },
+  {
+    "id": "logic-d2-04",
+    "difficulty": 2,
+    "prompt": "Sınıftaki bazı öğrenciler satranç oynar. Ozan bu sınıftaki bir öğrencidir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Ozan'ın satranç oynayıp oynamadığı bilinemez" },
+      { "id": "b", "label": "Ozan satranç oynar" },
+      { "id": "c", "label": "Ozan satranç oynamaz" },
+      { "id": "d", "label": "Sınıftaki herkes satranç oynar" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "\"Bazı öğrenciler\" ifadesi Ozan'ın bu gruba dahil olup olmadığını belirtmez, bu yüzden kesin bir şey söylenemez."
+  },
+  {
+    "id": "logic-d2-05",
+    "difficulty": 2,
+    "prompt": "Bir yarışa yalnızca Naz, Onur ve Pelin katıldı. Naz, Onur'dan önce bitirmedi. Onur, Pelin'den sonra bitirdi. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Naz yarışı son sırada bitirdi" },
+      { "id": "b", "label": "Pelin yarışı son sırada bitirdi" },
+      { "id": "c", "label": "Onur yarışı kazandı" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Pelin, Onur'dan önce; Onur da Naz'dan önce bitirdiğinden sıralama Pelin, Onur, Naz şeklindedir."
+  },
+  {
+    "id": "logic-d2-06",
+    "difficulty": 2,
+    "prompt": "Ada, Bora ve Ceren'in gömlekleri kırmızı, mavi ve yeşildir (üçü de farklı renk). Ada'nın gömleği yeşil değildir. Bora'nın gömleği kırmızıdır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Ceren'in gömleği yeşildir" },
+      { "id": "b", "label": "Ada'nın gömleği kırmızıdır" },
+      { "id": "c", "label": "Bora'nın gömleği mavidir" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Bora kırmızı giydiğine göre Ada (yeşil olamaz) mavi giymiş olmalı, geriye Ceren'e yeşil kalır."
+  },
+  {
+    "id": "logic-d2-07",
+    "difficulty": 2,
+    "prompt": "Yağmur yağarsa yer ıslanır. Yer ıslaktır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Yağmurun yağıp yağmadığı bilinemez" },
+      { "id": "b", "label": "Yağmur yağmıştır" },
+      { "id": "c", "label": "Yağmur yağmamıştır" },
+      { "id": "d", "label": "Yer her zaman ıslaktır" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Yer, yağmur dışında başka nedenlerle de ıslanmış olabilir; sonuçtan yola çıkarak nedeni kesin söylemek yanlış bir çıkarımdır."
+  },
+  {
+    "id": "logic-d2-08",
+    "difficulty": 2,
+    "prompt": "Bütün balıklar suda yaşar. Bütün alabalıklar balıktır. Papatya bir alabalıktır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Papatya suda yaşar" },
+      { "id": "b", "label": "Papatya karada yaşar" },
+      { "id": "c", "label": "Bütün balıklar alabalıktır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Papatya alabalık, alabalık balık, bütün balıklar da suda yaşadığına göre Papatya suda yaşar."
+  },
+  {
+    "id": "logic-d2-09",
+    "difficulty": 2,
+    "prompt": "Bir kutuda sadece kırmızı ve mavi toplar vardır. Kutudan çekilen topun mavi olmadığı bilinmektedir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Çekilen top kırmızıdır" },
+      { "id": "b", "label": "Çekilen top mavidir" },
+      { "id": "c", "label": "Kutuda yeşil top da vardır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Kutuda yalnızca iki renk olduğuna ve top mavi olmadığına göre top kırmızı olmalıdır."
+  },
+  {
+    "id": "logic-d2-10",
+    "difficulty": 2,
+    "prompt": "Yarışmaya sadece lise öğrencileri katılabilir. Kaan yarışmaya katıldı. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Kaan bir lise öğrencisidir" },
+      { "id": "b", "label": "Kaan bir üniversite öğrencisidir" },
+      { "id": "c", "label": "Kaan yarışmayı kazandı" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Yarışmaya katılabilmenin ön koşulu lise öğrencisi olmaktır; Kaan katıldığına göre bu koşulu sağlamış olmalıdır."
+  },
+  {
+    "id": "logic-d3-01",
+    "difficulty": 3,
+    "prompt": "Üç kardeş var: Toprak, Ilgın'dan büyük değildir. Ilgın, Mert'ten büyüktür. Toprak ile Ilgın'ın yaşları farklıdır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Ilgın en büyüktür" },
+      { "id": "b", "label": "Toprak en küçüktür" },
+      { "id": "c", "label": "Toprak, Mert'ten büyüktür" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Toprak, Ilgın'dan büyük değil ve yaşları farklı olduğundan Toprak < Ilgın'dır; Ilgın ayrıca Mert'ten de büyük olduğundan üçü arasında en büyük Ilgın'dır (Toprak-Mert sırası belirsiz kalır)."
+  },
+  {
+    "id": "logic-d3-02",
+    "difficulty": 3,
+    "prompt": "Bir şeklin kare olması için ancak ve ancak dört kenarının eşit VE dört açısının 90 derece olması gerekir. Şekil X'in dört açısı 90 derecedir ama kenar uzunlukları birbirinden farklıdır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Şekil X bir kare değildir" },
+      { "id": "b", "label": "Şekil X bir karedir" },
+      { "id": "c", "label": "Şekil X bir üçgendir" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Kare olma koşullarından biri (eşit kenar) sağlanmadığından şekil kesinlikle kare olamaz."
+  },
+  {
+    "id": "logic-d3-03",
+    "difficulty": 3,
+    "prompt": "Bir yarışta dört kişi var (Kaya, Lale, Mira, Nil) ve hepsi farklı sırada bitirdi. Kaya, Lale'den önce bitirmedi. Lale, Mira'dan önce bitirdi. Mira, Nil'den önce bitirdi. Kaya ile Lale farklı sırada bitirdi. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Lale yarışı birinci bitirdi" },
+      { "id": "b", "label": "Kaya yarışı birinci bitirdi" },
+      { "id": "c", "label": "Nil yarışı birinci bitirdi" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Kaya, Lale'den önce bitirmediğine ve aynı sırada da bitirmediğine göre Lale, Kaya'dan önce bitirmiştir; Lale ayrıca Mira'dan (ve dolayısıyla Nil'den) de önce bitirdiğine göre herkesten önde olan tek kişi Lale'dir."
+  },
+  {
+    "id": "logic-d3-04",
+    "difficulty": 3,
+    "prompt": "Ege, Fikret ve Gül'ün meslekleri doktor, mühendis ve öğretmendir (her biri farklı meslek). Ege doktor değildir. Gül mühendis değildir. Fikret öğretmen değildir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Fikret'in mesleği kesin olarak bilinemez" },
+      { "id": "b", "label": "Fikret doktordur" },
+      { "id": "c", "label": "Fikret mühendistir" },
+      { "id": "d", "label": "Ege öğretmendir" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Verilen üç dışlama kuralıyla tutarlı iki farklı atama vardır (Ege-mühendis/Fikret-doktor/Gül-öğretmen veya Ege-öğretmen/Fikret-mühendis/Gül-doktor); bu yüzden Fikret'in mesleği tek başına kesinleşmez."
+  },
+  {
+    "id": "logic-d3-05",
+    "difficulty": 3,
+    "prompt": "Bir öğrenci ödevini yapmadıysa derse giremez. Cem derse girdi. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Cem ödevini yapmıştır" },
+      { "id": "b", "label": "Cem ödevini yapmamıştır" },
+      { "id": "c", "label": "Cem dersten çıkarılacaktır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Ödevini yapmayan derse giremeyeceğine göre, derse girebilen Cem ödevini yapmış olmalıdır (çelişik-önerme çıkarımı)."
+  },
+  {
+    "id": "logic-d3-06",
+    "difficulty": 3,
+    "prompt": "Bu okuldaki bütün satranç kulübü üyeleri mantık sınavına girer. Mantık sınavına giren hiç kimse final haftasında tatile çıkamaz. Derin bir satranç kulübü üyesidir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Derin final haftasında tatile çıkamaz" },
+      { "id": "b", "label": "Derin final haftasında tatile çıkabilir" },
+      { "id": "c", "label": "Derin mantık sınavına girmez" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Derin, kulüp üyesi olduğu için mantık sınavına girer; mantık sınavına giren de tatile çıkamayacağına göre Derin de tatile çıkamaz."
+  },
+  {
+    "id": "logic-d3-07",
+    "difficulty": 3,
+    "prompt": "Beş öğrencinin sınav notları birbirinden farklıdır: A, B'den yüksektir. B, C'den yüksektir. C, D'den yüksektir. D, E'den yüksektir. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "E'nin notu en düşüktür" },
+      { "id": "b", "label": "C'nin notu A'dan yüksektir" },
+      { "id": "c", "label": "B'nin notu D'den düşüktür" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Sıralama A > B > C > D > E şeklindedir; E beşi arasında en düşük nota sahiptir."
+  },
+  {
+    "id": "logic-d3-08",
+    "difficulty": 3,
+    "prompt": "Bütün mühendislik öğrencileri fizik dersini alır. Fizik dersini alan hiç kimse aynı dönemde sanat tarihi dersi alamaz. Selin bu dönem sanat tarihi dersi almaktadır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Selin bir mühendislik öğrencisi değildir" },
+      { "id": "b", "label": "Selin bir mühendislik öğrencisidir" },
+      { "id": "c", "label": "Selin fizik dersi almaktadır" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Selin sanat tarihi aldığına göre fizik alamaz; fizik almadığına göre de mühendislik öğrencisi olamaz (iki adımlı çelişik-önerme çıkarımı)."
+  },
+  {
+    "id": "logic-d3-09",
+    "difficulty": 3,
+    "prompt": "Bir kutuda 10 top vardır; bunlar yalnızca kırmızı ve mavi renktedir. Kutuda en az 6 kırmızı top vardır. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Kutuda en fazla 4 mavi top vardır" },
+      { "id": "b", "label": "Kutuda tam olarak 6 kırmızı top vardır" },
+      { "id": "c", "label": "Kutuda hiç mavi top yoktur" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Kırmızı sayısı en az 6 olduğuna göre mavi sayısı en fazla 10 - 6 = 4 olabilir."
+  },
+  {
+    "id": "logic-d3-10",
+    "difficulty": 3,
+    "prompt": "Bir projede gecikme olursa bütçe aşılır. Bütçe aşılırsa yönetim toplantısı yapılır. Bu projede gecikme oldu. Aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "choices": [
+      { "id": "a", "label": "Bu proje için yönetim toplantısı yapılır" },
+      { "id": "b", "label": "Bu projede bütçe aşılmaz" },
+      { "id": "c", "label": "Yönetim toplantısı yapılmaz" },
+      { "id": "d", "label": "Bilinemez" }
+    ],
+    "correctChoiceId": "a",
+    "explanation": "Gecikme bütçe aşımına, bütçe aşımı da yönetim toplantısına yol açtığına göre, gecikme olduğu için toplantı da yapılır."
+  }
+]

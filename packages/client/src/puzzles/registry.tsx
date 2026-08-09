@@ -14,6 +14,7 @@ export interface PuzzleRendererProps {
 
 const REGISTRY: Partial<Record<PuzzleType, ComponentType<PuzzleRendererProps>>> = {
   PATTERN: MultipleChoice,
+  LOGIC: MultipleChoice,
 };
 
 export function getPuzzleRenderer(type: PuzzleType): ComponentType<PuzzleRendererProps> {

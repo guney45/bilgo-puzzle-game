@@ -15,7 +15,8 @@
     "@colyseus/ws-transport": "^0.17.13",
     "colyseus": "^0.17.10",
     "express": "^5.2.1",
-    "shared": "workspace:*"
+    "shared": "workspace:*",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@colyseus/sdk": "^0.17.43",
