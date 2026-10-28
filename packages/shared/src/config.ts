@@ -19,6 +19,7 @@ export const NOTICE_DISPLAY_MS = 3000; // room:notice toast'ının lobide görü
 // yoksa sayfanın yüklendiği host'a bu portla bağlanır — bkz. net/colyseus.ts).
 export const DEFAULT_SERVER_PORT = 2567;
 export const TIMING_TOLERANCE_MS = 80; // cevap süresi gecikme telafisi clamp toleransı (bkz. docs/03-ARCHITECTURE.md §7.3)
+export const MEMORY_DISPLAY_MS = 3000; // MEMORY ızgarasının gösterim süresi (bkz. docs/02-GAME_DESIGN.md §3.3)
 
 export const PUZZLE_TIME_MS = {
   PATTERN: 15000,

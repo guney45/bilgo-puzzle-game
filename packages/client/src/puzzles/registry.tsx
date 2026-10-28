@@ -4,6 +4,7 @@
 import type { ComponentType } from 'react';
 import type { ClientPuzzle, PuzzleType } from 'shared';
 import MultipleChoice from './MultipleChoice';
+import MemoryGrid from './MemoryGrid';
 
 export interface PuzzleRendererProps {
   puzzle: ClientPuzzle;
@@ -15,6 +16,7 @@ export interface PuzzleRendererProps {
 const REGISTRY: Partial<Record<PuzzleType, ComponentType<PuzzleRendererProps>>> = {
   PATTERN: MultipleChoice,
   LOGIC: MultipleChoice,
+  MEMORY: MemoryGrid,
 };
 
 export function getPuzzleRenderer(type: PuzzleType): ComponentType<PuzzleRendererProps> {

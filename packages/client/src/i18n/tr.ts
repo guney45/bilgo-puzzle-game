@@ -50,6 +50,8 @@ export const tr = {
     waitingLabel: 'Hazır ol…',
     lockedLabel: 'Kilitlendi',
     miniScore: (score: number) => `${score} puan`,
+    memorizeHint: 'Izgarayı ezberle…',
+    memorizeDone: 'Şimdi cevapla!',
   },
   roundResult: {
     waitingLabel: 'Sonuçlar hesaplanıyor…',

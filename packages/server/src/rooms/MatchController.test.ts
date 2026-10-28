@@ -5,6 +5,7 @@ import {
   LOCKED_MS,
   ROUND_RESULT_MS,
   ALL_ANSWERED_GRACE_MS,
+  MEMORY_DISPLAY_MS,
   PUZZLE_TIME_MS,
   ROUNDS_PER_MATCH,
   difficultyForRound,
@@ -12,8 +13,13 @@ import {
 } from 'shared';
 import { MatchController, type MatchPhaseInfo } from './MatchController';
 
-const PLAYING_MS = PUZZLE_TIME_MS.PATTERN; // Bu sabiti kullanan testler MATCH_SEED=42 ile o turda fiilen PATTERN'in seçildiğini varsayar
 const MATCH_SEED = 42;
+// PUZZLE_TIME_MS[type], difficulty çarpanından ÖNCEKİ temel süredir — ama MEMORY
+// kendi limitMs'ini gösterim+cevap toplamı olarak üretir (bkz. server/puzzles/memory.ts,
+// docs/02-GAME_DESIGN.md §3.3), yani PUZZLE_TIME_MS.MEMORY tek başına yetmez.
+// Bu harita "zorluk eğrisi" testinin beklenen süreyi PUZZLE_TIME_MS'ten bağımsızca
+// yeniden hesaplayabilmesi için (bkz. docs/DECISIONS.md ADR-018).
+const BASE_LIMIT_MS = { ...PUZZLE_TIME_MS, MEMORY: MEMORY_DISPLAY_MS + PUZZLE_TIME_MS.MEMORY };
 
 function makeController(totalRounds = 2) {
   const events: MatchPhaseInfo[] = [];
@@ -64,7 +70,9 @@ describe('MatchController — faz geçişleri', () => {
     now = controller.phaseEndsAt!;
     controller.checkAdvance(now);
     expect(controller.phase).toBe('PLAYING');
-    expect(controller.phaseEndsAt).toBe(now + PLAYING_MS);
+    // O turda fiilen seçilen tipin limitMs'i (birden fazla tip kayıtlı, bkz. ADR-017/018).
+    const playingMs = controller.getClientPuzzle('p1')!.limitMs;
+    expect(controller.phaseEndsAt).toBe(now + playingMs);
 
     now = controller.phaseEndsAt!;
     controller.checkAdvance(now);
@@ -205,7 +213,7 @@ describe('MatchController — puzzle üretimi ve round:answer', () => {
     toReveal(controller, 0);
     toPlaying(controller);
     const puzzle = controller.getClientPuzzle('p1')!;
-    const limitMs = PUZZLE_TIME_MS.PATTERN;
+    const limitMs = puzzle.limitMs; // O turda fiilen seçilen tipin limitMs'i (bkz. ADR-017/018)
 
     const tooLate = controller.submitAnswer('p1', puzzle.id, puzzle.choices[0]!.id, limitMs + 1, 0);
     expect(tooLate).toEqual({ accepted: false, code: 'E_TIMING' });
@@ -328,7 +336,7 @@ describe('MatchController — getRoundRevealAt / getRoundResultData', () => {
     const data = controller.getRoundResultData()!;
     expect(data.puzzleId).toBe(puzzle.id);
     expect(typeof data.correctChoiceId).toBe('string');
-    expect(data.limitMs).toBe(PLAYING_MS);
+    expect(data.limitMs).toBe(puzzle.limitMs); // O turda fiilen seçilen tipin limitMs'i (bkz. ADR-017/018)
     // Map iterasyon sırası varış sırasıdır: p2 önce cevapladı.
     expect(Array.from(data.answers.keys())).toEqual(['p2', 'p1']);
     expect(data.answers.get('p2')).toEqual({ choiceId: puzzle.choices[0]!.id, answerMs: 100 });
@@ -357,7 +365,7 @@ describe('MatchController — zorluk eğrisi (bkz. docs/02-GAME_DESIGN.md §2)',
       // turun temel süresi tipe göre değişir; o turda gerçekten seçilen tipi
       // controller'dan okuyup PUZZLE_TIME_MS'ten buna göre bakıyoruz.
       const actualType = controller.getClientPuzzle('p1')!.type;
-      const expectedLimitMs = Math.round(PUZZLE_TIME_MS[actualType] * timeMultiplierForDifficulty(expectedDifficulty));
+      const expectedLimitMs = Math.round(BASE_LIMIT_MS[actualType] * timeMultiplierForDifficulty(expectedDifficulty));
       expect(controller.phaseEndsAt! - revealAt).toBe(expectedLimitMs);
 
       // PLAYING → LOCKED → ROUND_RESULT (bir sonraki REVEAL'a hazırlan)

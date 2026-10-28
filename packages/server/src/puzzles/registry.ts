@@ -4,10 +4,12 @@ import type { PuzzleType, Rng } from 'shared';
 import type { PuzzleGenerator } from './PuzzleGenerator';
 import { patternGenerator } from './pattern';
 import { logicGenerator } from './logic';
+import { memoryGenerator } from './memory';
 
 const REGISTRY: Partial<Record<PuzzleType, PuzzleGenerator>> = {
   PATTERN: patternGenerator,
   LOGIC: logicGenerator,
+  MEMORY: memoryGenerator,
 };
 
 export function getPuzzleGenerator(type: PuzzleType): PuzzleGenerator {

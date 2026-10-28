@@ -34,13 +34,14 @@ describe('pickPuzzleType', () => {
 });
 
 describe('registeredPuzzleTypes / getPuzzleGenerator', () => {
-  it('bugün PATTERN ve LOGIC kayıtlıdır ve generator döner', () => {
-    expect(registeredPuzzleTypes()).toEqual(['PATTERN', 'LOGIC']);
+  it('bugün PATTERN, LOGIC ve MEMORY kayıtlıdır ve generator döner', () => {
+    expect(registeredPuzzleTypes()).toEqual(['PATTERN', 'LOGIC', 'MEMORY']);
     expect(getPuzzleGenerator('PATTERN').type).toBe('PATTERN');
     expect(getPuzzleGenerator('LOGIC').type).toBe('LOGIC');
+    expect(getPuzzleGenerator('MEMORY').type).toBe('MEMORY');
   });
 
   it('kayıtlı olmayan bir tip istenirse hata fırlatır', () => {
-    expect(() => getPuzzleGenerator('MEMORY')).toThrow();
+    expect(() => getPuzzleGenerator('SPATIAL')).toThrow();
   });
 });
